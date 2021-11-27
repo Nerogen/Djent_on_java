@@ -9,5 +9,5 @@
 - [ ] 2 - Algorithmization.
 - [ ] 3 - Strings and basics of text processing.
 - [ ] 4 - programming with classes.
-- [ ] 5 - Basics of OOP.
+- [ ] 5 - test of OOP.
 - [ ] 6 - Tasks.
