@@ -76,11 +76,11 @@ public class LinearProgram implements Reader, Printer {
         System.out.println("Result: " + result);
     }
 
-    public double firstFormula(double a, double b, double c) {
+    public double calculateFirstFormula(double a, double b, double c) {
         return ((a - 3) * b / 2) + c;
     }
 
-    public double secondFormula(int a, int b, int c) {
+    public double calculateSecondFormula(int a, int b, int c) {
         if (a == 0) {
             System.out.println("Dividing by zero!");
             return 0;
@@ -89,7 +89,7 @@ public class LinearProgram implements Reader, Printer {
         }
     }
 
-    public double thirdFormula(int x, int y) {
+    public double calculateThirdFormula(int x, int y) {
         if (Math.cos(x) - Math.sin(y) == 0) {
             System.out.println("Dividing by zero!");
             return 0;
@@ -98,7 +98,7 @@ public class LinearProgram implements Reader, Printer {
         }
     }
 
-    public double swapWholeAndFractionalPartsWithDoubleType(double number) {
+    public double swapWholeAndFractionalParts(double number) {
         double wholePart;
         double fractionPart;
 
