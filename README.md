@@ -8,6 +8,6 @@
 - [ ] 1 - Basic of software code development.
 - [ ] 2 - Algorithmization.
 - [ ] 3 - Strings and basics of text processing.
-- [ ] 4 - programming with classes.
-- [ ] 5 - test of OOP.
+- [ ] 4 - Programming with classes.
+- [ ] 5 - Test of OOP.
 - [ ] 6 - Tasks.
