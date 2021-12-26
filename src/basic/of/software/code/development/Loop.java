@@ -83,16 +83,10 @@ public class Loop implements Reader {
         ArrayList<Integer> firstBox = new ArrayList<Integer>();
         ArrayList<Integer> secondBox = new ArrayList<Integer>();
         HashSet<Integer> result = new HashSet<Integer>();
-        while (firstValue > 0) {
-            firstValue /= 10;
-            firstBox.add(firstValue % 10);
-        }
-        System.out.println(firstBox);
-        while (secondValue > 0) {
-            secondValue /= 10;
-            secondBox.add(secondValue % 10);
-        }
-        System.out.println(secondBox);
+
+        firstBox = getNumberInList(firstValue);
+        secondBox = getNumberInList(secondValue);
+
         for (int i = 0; i < firstBox.size(); ++i) {
             for (int j = 0; j < secondBox.size(); ++j) {
                 if (firstBox.get(i) == secondBox.get(j)) {
@@ -101,5 +95,14 @@ public class Loop implements Reader {
             }
         }
         return result;
+    }
+
+    private ArrayList<Integer> getNumberInList(int value) {
+        ArrayList<Integer> box = new ArrayList<Integer>();
+        while (value > 0) {
+            box.add(value % 10);
+            value /= 10;
+        }
+        return box;
     }
 }
