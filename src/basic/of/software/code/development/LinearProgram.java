@@ -12,12 +12,7 @@ public class LinearProgram implements Printer {
 
     //implementation interface Printer, for weak connection, we can print not only in console
     @Override
-    public void print(double result) {
-        System.out.println("Result: " + result);
-    }
-
-    @Override
-    public void print(long result) {
+    public <T> void print(T result) {
         System.out.println("Result: " + result);
     }
 
