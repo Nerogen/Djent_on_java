@@ -5,7 +5,7 @@
 - Language: Java☕.
 - Development approach: OOP & procedural.
 ## 📌 List tasks: 
-- [ ] 1 - Basic of software code development.
+- [X] 1 - Basic of software code development.
 - [ ] 2 - Algorithmization.
 - [ ] 3 - Strings and basics of text processing.
 - [ ] 4 - Programming with classes.
