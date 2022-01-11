@@ -1,6 +1,6 @@
 package algorithmization;
 
-import interfaces.Filler;
+import interfaces.FillerOneDimensionalArray;
 import interfaces.Reader;
 
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-public class OneDimensionalArray implements Reader, Filler {
+public class OneDimensionalArray implements Reader, FillerOneDimensionalArray {
 
     @Override
     public int read() {

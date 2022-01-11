@@ -5,18 +5,13 @@ import interfaces.Printer;
 
 import java.util.Stack;
 
-public class LinearProgram implements Printer {
+public class LinearProgram {
     //private attributes for formulas
     private final int DIVIDER_OR_MULTIPLIER_FOR_TAKE_SOME_PART = 1000;
     private final int DIVIDER_FOR_PROCESS_TIME = 60;
 
     //implementation interface Printer, for weak connection, we can print not only in console
-    @Override
-    public <T> void print(T result) {
-        System.out.println("Result: " + result);
-    }
 
-    @Override
     public void printTimeInSomeFormat(int value) {
         Stack<Integer> stack = new Stack<Integer>();
         stack = printTimeProcessor(value);

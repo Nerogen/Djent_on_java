@@ -1,5 +1,5 @@
 package interfaces;
 
-public interface Filler {
+public interface FillerOneDimensionalArray {
     int[] fillingArrayRandomNumbers();
 }
