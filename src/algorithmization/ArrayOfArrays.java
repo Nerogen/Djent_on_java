@@ -4,6 +4,7 @@ package algorithmization;
 import interfaces.FillerArrayOfArrays;
 import interfaces.Printer;
 import interfaces.Reader;
+import org.w3c.dom.ls.LSOutput;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -169,6 +170,159 @@ public class ArrayOfArrays implements Reader, Printer, FillerArrayOfArrays {
         }
 
         return result;
+    }
+
+    public ArrayList<Integer> getNumbersStringsWhereNumFiveHasThreeTimes() {
+        Random random = new Random();
+        int[][] array = new int[10][20];
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        int count;
+        for (int i = 0; i < array.length; ++i) {
+            count = 0;
+            for (int j = 0; j < array[i].length; ++j) {
+                array[i][j] = random.nextInt(15);
+                if (array[i][j] == 5) count++;
+            }
+            if (count == 3) {
+                result.add(i);
+            }
+        }
+
+        print(array);
+        return result;
+    }
+
+    //bubble sort
+    public int[][] sortArrayOfArraysByStringsSimple(int[][] array) {
+        for (int i = 0; i < array.length; ++i) {
+            int temp;
+            for (int f = 0; f != array[i].length; ++f) {
+                for (int s = 0; s != array[i].length; ++s) {
+                    if (array[i][f] < array[i][s]) {
+                        temp = array[i][f];
+                        array[i][f] = array[i][s];
+                        array[i][s] = temp;
+
+                    }
+                }
+            }
+        }
+        return array;
+    }
+
+    //bubble sort
+    public int[][] sortArraysOfArraysByStringsReverse(int[][] array) {
+        for (int i = 0; i < array.length; ++i) {
+            int temp;
+            for (int f = 0; f != array[i].length; ++f) {
+                for (int s = 0; s != array[i].length; ++s) {
+                    if (array[i][f] < array[i][s]) {
+                        temp = array[i][f];
+                        array[i][f] = array[i][s];
+                        array[i][s] = temp;
+                    }
+
+                }
+            }
+        }
+        return array;
+    }
+
+    //bubble sort
+    public int[][] sortArraysOfArraysByColumnsSimple(int[][] array) {
+        print(array);
+        System.out.println();
+        for (int i = 0; i < array.length; ++i) {
+            int temp;
+            for (int f = 0; f != array[i].length; ++f) {
+                for (int s = 0; s != array[i].length; ++s) {
+                    if (array[f][i] < array[s][i]) {
+                        temp = array[f][i];
+                        array[f][i] = array[s][i];
+                        array[s][i] = temp;
+                    }
+                }
+            }
+        }
+        return array;
+    }
+
+    //bubble sort
+    public int[][] sortArraysOfArraysByColumnsReverse(int[][] array) {
+        for (int i = 0; i < array.length; ++i) {
+            int temp;
+            for (int f = 0; f != array[i].length; ++f) {
+                for (int s = 0; s != array[i].length; ++s) {
+                    if (array[f][i] > array[s][i]) {
+                        temp = array[f][i];
+                        array[f][i] = array[s][i];
+                        array[s][i] = temp;
+                    }
+                }
+            }
+        }
+        return array;
+    }
+
+    public int[][] createRandomArrayOfArrays() {
+        Random random = new Random();
+        int numberOfStrings = random.nextInt(15);
+        int numberOfColumns = random.nextInt(15);
+        int[][] array = new int[numberOfStrings][numberOfColumns];
+
+        int count;
+        for (int i = 0; i < numberOfColumns; ++i) {
+            count = 0;
+            for (int j = 0; j < numberOfStrings; ++j) {
+                if (count != i) {
+                    count++;
+                    array[j][i] = 1;
+                }
+            }
+        }
+
+        return array;
+    }
+
+    public int[][] findMaxAndReplaceOdd(int[][] array) {
+        int max = array[0][0];
+        print(array);
+        System.out.println();
+        for (int i = 0; i < array.length; ++i) {
+            for (int j = 0; j < array[i].length; ++j) {
+                if (array[i][j] > max) {
+                    max = array[i][j];
+                }
+            }
+        }
+
+        for (int i = 0; i < array.length; ++i) {
+            for (int j = 0; j < array[i].length; ++j) {
+                if ((j + i) % 2 != 0) {
+                    array[i][j] = max;
+                }
+            }
+        }
+
+        return array;
+    }
+
+    public int[][] magicSquare() {
+        Random random = new Random();
+        int size = random.nextInt(15);
+        int[][] array = new int[size][size];
+
+        for (int i = 0; i < array.length; ++i) {
+            for (int j = 0; j < array[i].length; ++j) {
+               array[i][j] = size;
+            }
+        }
+        //cast magic sum ;)
+        //not differ numbers
+        //int magicSum = (size * size + 1) / 2 * size;
+        //int magicConstant = (int) (size * (Math.sqrt(size) + 1)) / 2;
+
+        return array;
     }
 
 

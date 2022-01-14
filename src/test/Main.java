@@ -13,6 +13,6 @@ public class Main {
 
     public static void main(String[] args) {
        ArrayOfArrays form = new ArrayOfArrays();
-        System.out.println(form.positiveElementsOnMainDiagonal(form.fillingArrayOfArraysRandomNumbers()));
+       form.print(form.magicSquare());
     }
 }
