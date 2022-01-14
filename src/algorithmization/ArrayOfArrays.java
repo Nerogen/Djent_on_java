@@ -324,7 +324,5 @@ public class ArrayOfArrays implements Reader, Printer, FillerArrayOfArrays {
 
         return array;
     }
-
-
 }
 
