@@ -15,7 +15,9 @@ public class Main {
 
     public static void main(String[] args) {
         Sort form = new Sort();
-        System.out.println(Arrays.toString(form.bubbleSort(form.fillingArrayRandomNumbers())));
+        int[] array1 = {1, 5, 7, 3};
+        int[] array2 = {2, 3, 6, 9};
+        System.out.println(Arrays.toString(form.leadToCommonDenominator(array1,array2)));
 
     }
 }

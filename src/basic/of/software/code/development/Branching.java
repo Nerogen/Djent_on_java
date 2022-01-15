@@ -35,7 +35,7 @@ public class Branching {
 
     //how I understand z this long of brick, so we can't input infinity, this statement is not used
     public boolean brickFitIntoTheHole(int width, int height, int x, int y, int z) {
-        if (width >= x & height >= y) return true;
+        if (width >= x && height >= y) return true;
         return false;
     }
 

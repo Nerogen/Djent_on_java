@@ -3,8 +3,7 @@ package algorithmization;
 import interfaces.FillerOneDimensionalArray;
 import interfaces.Reader;
 
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Sort implements FillerOneDimensionalArray, Reader {
 
@@ -58,8 +57,7 @@ public class Sort implements FillerOneDimensionalArray, Reader {
     }
 
     public int[] selectionSort(int[] array) {
-        int max = array[0];
-        int helperSwap = 0;
+        int max;
         int index = 0;
 
         for (int i = 0; i < array.length; ++i) {
@@ -71,24 +69,19 @@ public class Sort implements FillerOneDimensionalArray, Reader {
                 }
             }
             if (array[i] < max) {
-                helperSwap = array[i];
-                array[i] = max;
-                array[index] = helperSwap;
+                swap(array, i, index);
             }
         }
         return array;
     }
 
     public int[] bubbleSort(int[] array) {
-        int temp;
         int numberOfSwaps = 0;
 
         for (int i = 0; i < array.length; ++i) {
             for (int j = 0; j < array.length; ++j) {
                 if (array[i] < array[j]) {
-                    temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
+                    swap(array, i, j);
                     numberOfSwaps++;
                 }
             }
@@ -97,8 +90,7 @@ public class Sort implements FillerOneDimensionalArray, Reader {
         return array;
     }
 
-    //first: sequence A1 <= A2 ... <=An  already sorted
-    //second: binary search in no sorted sequence doesn't make sense
+    //first: binary search in no sorted sequence doesn't make sense
     public int[] insertionSort(int[] array) {
 
         for (int i = 1; i < array.length; i++) {
@@ -134,12 +126,74 @@ public class Sort implements FillerOneDimensionalArray, Reader {
     }
 
     public int[] shellSort(int[] array) {
+        int count = 1;
 
-        for (int i = 0; i < array.length; ++i) {
-
+        while (count != 0) {
+            count = 0;
+            for (int i = 0; i < array.length; ++i) {
+                if ((i + 1 < array.length) && (array[i] > array[i + 1])) {
+                    swap(array, i, i + 1);
+                    i--;
+                    count++;
+                }
+            }
         }
 
         return array;
     }
 
+    private void swap(int[] array, int firstIndex, int secondIndex) {
+        int tmp = array[firstIndex];
+        array[firstIndex] = array[secondIndex];
+        array[secondIndex] = tmp;
+    }
+
+    private void swap(String[] array, int firstIndex, int secondIndex) {
+        String tmp = array[firstIndex];
+        array[firstIndex] = array[secondIndex];
+        array[secondIndex] = tmp;
+    }
+
+    //equal numbers not insert one more time
+    public HashMap<String, String> placeWhereNeedToInsertNewNumbers(int[] firstArray, int[] secondArray) {
+        HashMap<String, String> result = new HashMap<>();
+        System.out.println(Arrays.toString(firstArray));
+        System.out.println(Arrays.toString(secondArray));
+        for (int i = 0; i < firstArray.length; ++i) {
+            for (int j = 0; j < secondArray.length; ++j) {
+                if (firstArray[i] < secondArray[j]) {
+                    result.put("Insert on place number from first array: " + firstArray[i], "Position in second array: " + j);
+                    break;
+                }
+            }
+        }
+        return result;
+    }
+
+    public String[] leadToCommonDenominator(int[] numerator, int[] denominator) {
+        String[] result = new String[numerator.length];
+        int maxDenominator = 1;
+        int multiplier = 0;
+
+        for (int i = 0; i < denominator.length; ++i) {
+            maxDenominator *= denominator[i];
+        }
+
+        for (int i = 0; i < denominator.length; ++i) {
+            multiplier = maxDenominator / denominator[i];
+            numerator[i] *= multiplier;
+            result[i] = (numerator[i] + " / " + maxDenominator);
+        }
+
+        for (int i = 0; i < numerator.length; ++i) {
+            for (int j = 0; j < numerator.length; ++j) {
+                if (numerator[i] < numerator[j]) {
+                    swap(numerator, i, j);
+                    swap(result, i, j);
+                }
+            }
+        }
+
+        return result;
+    }
 }
