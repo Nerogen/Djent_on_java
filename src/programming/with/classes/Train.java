@@ -1,11 +1,11 @@
 package programming.with.classes;
 
-public class Train {
+public final class Train {
     private String destination;
-    private String numberOfTrain;
+    private int numberOfTrain;
     private String departureTime;
 
-    public Train(String destination, String numberOfTrain, String departureTime){
+    public Train(String destination, int numberOfTrain, String departureTime) {
         this.destination = destination;
         this.numberOfTrain = numberOfTrain;
         this.departureTime = departureTime;
@@ -19,7 +19,7 @@ public class Train {
         return destination;
     }
 
-    public String getNumberOfTrain() {
+    public int getNumberOfTrain() {
         return numberOfTrain;
     }
 
@@ -31,8 +31,18 @@ public class Train {
         this.destination = destination;
     }
 
-    public void setNumberOfTrain(String numberOfTrain) {
+    public void setNumberOfTrain(int numberOfTrain) {
         this.numberOfTrain = numberOfTrain;
+    }
+
+    public void getInfo(int numberOfTrain){
+        if(numberOfTrain == this.numberOfTrain){
+            System.out.println("Train{" +
+                    "destination='" + destination + '\'' +
+                    ", numberOfTrain=" + numberOfTrain +
+                    ", departureTime='" + departureTime + '\'' +
+                    '}');
+        }
     }
 
 }
